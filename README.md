@@ -7,9 +7,6 @@ Replaces MCP protocol overhead with direct CLI invocation for use in OpenClaw an
 ## Install
 
 ```bash
-# Via uv (recommended)
-uv pip install stock-data-skill
-
 # Via pip
 pip install stock-data-skill
 ```
@@ -37,6 +34,8 @@ stock-data binance_ai_report symbol=BTC
 
 # Market overview
 stock-data stock_news_global
+
+# Health Check
 stock-data data_source_status
 ```
 
@@ -45,6 +44,7 @@ stock-data data_source_status
 Create `~/.stock-data.env` with optional API keys:
 
 ```bash
+git clone https://github.com/openstockdata/stock-data-skill.git
 cp .env.example ~/.stock-data.env
 # Edit with your keys
 ```
@@ -62,7 +62,7 @@ clawhub install stock-data
 Or manually copy to your skills directory:
 
 ```bash
-cp -r SKILL.md references/ ~/.openclaw/skills/stock-data/
+cp -r SKILL.md references/ ~/.openclaw/workspace/skills/stock-data/
 ```
 
 ## Tool Categories
