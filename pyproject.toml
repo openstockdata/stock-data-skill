@@ -8,7 +8,6 @@ license = { text = "MIT" }
 keywords = ["stock", "crypto", "analysis", "openclaw", "cli", "akshare"]
 dependencies = [
     "open-stock-data>=0.1.0",
-    "python-dotenv>=1.0.0",
 ]
 
 [project.scripts]

@@ -38,18 +38,21 @@ stock-data data_source_status
 ```
 
 ## Configuration
-
-Create `~/.config/.stock-data.env` with optional Environment Variables:
+For standalone CLI usage, set environment variables in your shell:
 
 ```bash
-mkdir -p ~/.config
-cp .env.example ~/.config/.stock-data.env
-# Edit with your keys
+export TUSHARE_TOKEN=your_token
+export ALPHA_VANTAGE_API_KEY=your_key
 ```
 
-See `.env.example` for all supported variables.
+OpenClaw automatically loads environment variables from `~/.openclaw/.env`. Copy the example file and fill in your API keys:
 
-The config file location is independent of your working directory, so `stock-data` commands work correctly from any path.
+```bash
+cp .env.example ~/.openclaw/.env
+# Edit ~/.openclaw/.env with your keys
+```
+
+See `.env.example` for all supported variables and how to obtain API keys.
 
 ## OpenClaw Skill
 

@@ -87,10 +87,6 @@ def main():
 
     args = parser.parse_args()
 
-    # Load .env before anything else
-    from .env import load_env
-    load_env()
-
     # Build tool registry (lazy import of open_stock_data)
     registry = _build_tool_registry()
 
