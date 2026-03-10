@@ -6,11 +6,9 @@ build/
 dist/
 .venv/
 .env
-.env.local
 .cache/
-.pytest_cache/
-*.log
 .DS_Store
 uv.lock
 
 .claude/
+.python-version
