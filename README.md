@@ -2,8 +2,6 @@
 
 CLI tool and OpenClaw skill for stock/crypto data analysis. Provides 47 data tools covering A-shares, HK stocks, US stocks, and cryptocurrencies with multi-source failover.
 
-Replaces MCP protocol overhead with direct CLI invocation for use in OpenClaw and other AI agent frameworks.
-
 ## Install
 
 ```bash
@@ -41,25 +39,21 @@ stock-data data_source_status
 
 ## Configuration
 
-Create `~/.stock-data.env` with optional API keys:
+Create `~/.config/.stock-data.env` with optional Environment Variables:
 
 ```bash
-git clone https://github.com/openstockdata/stock-data-skill.git
-cp .env.example ~/.stock-data.env
+mkdir -p ~/.config
+cp .env.example ~/.config/.stock-data.env
 # Edit with your keys
 ```
 
 See `.env.example` for all supported variables.
 
+The config file location is independent of your working directory, so `stock-data` commands work correctly from any path.
+
 ## OpenClaw Skill
 
-This project is also an [OpenClaw](https://openclaw.ai) skill. Install in your workspace:
-
-```bash
-clawhub install stock-data
-```
-
-Or manually copy to your skills directory:
+Manually copy to your skills directory:
 
 ```bash
 cp -r SKILL.md references/ ~/.openclaw/workspace/skills/stock-data/

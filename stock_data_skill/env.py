@@ -7,17 +7,15 @@ def load_env():
     """Load .env from multiple search paths (first found wins).
 
     Search order:
-    1. $CWD/.env
-    2. ~/.stock-data.env
-    3. Package root .env
+    1. ~/.config/.stock-data.env (user-level config, independent of working directory)
+    2. Package root .env (development environment)
 
     Uses override=False so existing environment variables take precedence.
     """
     from dotenv import load_dotenv
 
     search_paths = [
-        Path.cwd() / ".env",
-        Path.home() / ".stock-data.env",
+        Path.home() / ".config" / ".stock-data.env",
         Path(__file__).parent.parent / ".env",
     ]
     for p in search_paths:
