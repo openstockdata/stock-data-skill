@@ -158,22 +158,22 @@ stock_prices 工具返回的技术指标包括：
 
 每次分析完成后，**必须**将完整报告写入文件：
 
-1. **目录**: `~/stock-reports/`（不存在则创建）
+1. **目录**: `./stock-reports/`（不存在则创建）
 2. **文件名**: `{market}-{symbol}-{YYYYMMDD}.md`，如 `hk-09988-20260226.md`、`sh-600036-20260226.md`、`us-AAPL-20260226.md`
 3. **同一天多次分析同一只股票**: 直接覆盖同日文件（以最新分析为准）
 
 ```bash
 # 文件路径示例
-~/stock-reports/hk-09988-20260226.md
-~/stock-reports/sh-600036-20260226.md
-~/stock-reports/us-AAPL-20260226.md
+./stock-reports/hk-09988-20260226.md
+./stock-reports/sh-600036-20260226.md
+./stock-reports/us-AAPL-20260226.md
 ```
 
 #### 历史报告对比流程
 
 **在开始分析前**，先查找该股票的上次分析报告：
 
-1. **查找上次报告**: 用 Glob 搜索 `~/stock-reports/{market}-{symbol}-*.md`，找到日期最近的非当日文件
+1. **查找上次报告**: 用 Glob 搜索 `./stock-reports/{market}-{symbol}-*.md`，找到日期最近的非当日文件
 2. **读取上次报告**: 如果找到，读取该文件内容，暂存关键数据（价格、建议、指标评分等）
 3. **执行本次分析**: 按正常流程完成全部分析
 4. **生成对比章节**: 在报告末尾追加"与上次分析对比"章节：
@@ -215,10 +215,10 @@ stock_prices 工具返回的技术指标包括：
 #### 报告写入步骤（在分析完成后执行）
 
 ```
-1. mkdir -p ~/stock-reports/
-2. Glob 查找 ~/stock-reports/{market}-{symbol}-*.md（分析开始前执行）
+1. mkdir -p ./stock-reports/
+2. Glob 查找 ./stock-reports/{market}-{symbol}-*.md（分析开始前执行）
 3. 如果找到非当日历史文件 → 读取最近一份 → 暂存关键数据
 4. 完成本次分析 → 生成对比章节
-5. Write 完整报告到 ~/stock-reports/{market}-{symbol}-{YYYYMMDD}.md
+5. Write 完整报告到 ./stock-reports/{market}-{symbol}-{YYYYMMDD}.md
 6. 告知用户报告已保存的路径及与上次的关键变化
 

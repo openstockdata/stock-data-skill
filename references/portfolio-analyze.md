@@ -252,21 +252,21 @@
 
 每次分析完成后，**必须**将完整报告写入文件：
 
-1. **目录**: `~/stock-reports/`（不存在则创建）
+1. **目录**: `./stock-reports/`（不存在则创建）
 2. **文件名**: `portfolio-report-{YYYYMMDD}.md`，如 `portfolio-report-20260225.md`
 3. **同一天多次分析**: 直接覆盖同日文件（以最新分析为准）
 
 ```bash
 # 文件路径示例
-~/stock-reports/portfolio-report-20260225.md
-~/stock-reports/portfolio-report-20260226.md
+./stock-reports/portfolio-report-20260225.md
+./stock-reports/portfolio-report-20260226.md
 ```
 
 #### 历史报告对比流程
 
 在完成当次分析后，执行以下对比步骤：
 
-1. **查找上次报告**: 用 Glob 搜索 `~/stock-reports/portfolio-report-*.md`，找到日期最近的非当日文件
+1. **查找上次报告**: 用 Glob 搜索 `./stock-reports/portfolio-report-*.md`，找到日期最近的非当日文件
 2. **读取上次报告**: 读取该文件内容
 3. **生成对比章节**: 在报告末尾追加"与上次分析对比"章节，包含：
 
@@ -304,9 +304,9 @@
 #### 报告写入步骤（在分析完成后执行）
 
 ```
-1. mkdir -p ~/stock-reports/
-2. Glob 查找 ~/stock-reports/portfolio-report-*.md
+1. mkdir -p ./stock-reports/
+2. Glob 查找 ./stock-reports/portfolio-report-*.md
 3. 如果找到非当日历史文件 → 读取最近一份 → 生成对比章节
-4. Write 完整报告到 ~/stock-reports/portfolio-report-{YYYYMMDD}.md
+4. Write 完整报告到 ./stock-reports/portfolio-report-{YYYYMMDD}.md
 5. 告知用户报告已保存的路径
 ```
